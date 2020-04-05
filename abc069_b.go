@@ -8,7 +8,7 @@ import (
 // 以下の問題
 // https://atcoder.jp/contests/abc069/tasks/abc069_b
 
-func a() {
+func main() {
 	var s string
 	fmt.Scan(&s)
 
