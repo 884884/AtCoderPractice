@@ -3,23 +3,14 @@ package main
 import "fmt"
 
 // 以下の問題
-// https://atcoder.jp/contests/abc131/tasks/abc131_a
+// https://atcoder.jp/contests/abc044/tasks/abc044_a
 
 func main() {
-	var s string
-	fmt.Scan(&s)
-
-	if s[0] == s[1] {
-		fmt.Println("Bad")
-		return
+	var n, k, x, y int
+	fmt.Scan(&n, &k, &x, &y)
+	if n > k {
+		fmt.Println(x*n + y*(n-k))
+	} else {
+		fmt.Println(x * n)
 	}
-	if s[1] == s[2] {
-		fmt.Println("Bad")
-		return
-	}
-	if s[2] == s[3] {
-		fmt.Println("Bad")
-		return
-	}
-	fmt.Println("Good")
 }
