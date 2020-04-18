@@ -3,20 +3,18 @@ package main
 import "fmt"
 
 // 以下の問題
-// https://atcoder.jp/contests/abc115/tasks/abc115_b
+// https://atcoder.jp/contests/abc118/tasks/abc118_b
 
 func main() {
-	var N, p int
-	fmt.Scan(&N)
-
-	var max, add int
-	for i := 0; i < N; i++ {
-		fmt.Scan(&p)
-		add += p
-		if max < p {
-			max = p
+	var n, m int
+	fmt.Scan(&n)
+	slice2d := make([][]int, n)
+	for i := 0; i < n; i++ {
+		fmt.Scan(&m)
+		slice2d[i] = make([]int, m)
+		for j := 0; j < m; j++ {
+			fmt.Scan(&slice2d[i][j])
 		}
 	}
-
-	fmt.Println(add - max/2)
+	fmt.Println(slice2d)
 }
