@@ -9,10 +9,9 @@ func main() {
 	var q int
 	fmt.Scan(&q)
 
-	switch q {
-	case 1:
+	if q == 1 {
 		fmt.Println("ABC")
-	case 2:
+	} else {
 		fmt.Println("chokudai")
 	}
 }

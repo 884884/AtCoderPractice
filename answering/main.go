@@ -1,19 +1,40 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // 以下の問題
-// https://atcoder.jp/contests/abc130/tasks/abc130_c
+// https://atcoder.jp/contests/abc166/tasks/abc166_c
 
 func main() {
-	var w, h, x, y float64
-	fmt.Scan(&w, &h, &x, &y)
+	var n, m int
+	fmt.Scan(&n, &m)
+
+	hs := make([]int, n)
+	for i, _ := range hs {
+		fmt.Scan(&hs[i])
+	}
+
+	var a, b int
+	mm := make(map[int]bool)
+	for i := 0; i < m; i++ {
+		fmt.Scan(&a, &b)
+		a--
+		b--
+
+		if hs[a] <= hs[b] {
+			mm[a] = true
+		}
+		if hs[a] >= hs[b] {
+			mm[b] = true
+		}
+	}
 
 	ans := 0
-	if x == w/2 && y == h/2 {
-		ans = 1
+	for i := 0; i < n; i++ {
+		if !mm[i] {
+			ans++
+		}
 	}
-	fmt.Println(w*h/2, ans)
+
+	fmt.Println(ans)
 }
