@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // 以下の問題
 // https://atcoder.jp/contests/abc104/tasks/abc104_a

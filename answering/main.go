@@ -1,40 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 以下の問題
-// https://atcoder.jp/contests/abc166/tasks/abc166_c
+// https://atcoder.jp/contests/abc144/tasks/abc144_c
 
 func main() {
-	var n, m int
-	fmt.Scan(&n, &m)
+	var n int
+	fmt.Scan(&n)
 
-	hs := make([]int, n)
-	for i, _ := range hs {
-		fmt.Scan(&hs[i])
+	ans := n - 1
+	for i := 1; i <= n/2+1; i++ {
+		if n%i != 0 {
+			continue
+		}
+
 	}
 
-	var a, b int
-	mm := make(map[int]bool)
-	for i := 0; i < m; i++ {
-		fmt.Scan(&a, &b)
-		a--
-		b--
-
-		if hs[a] <= hs[b] {
-			mm[a] = true
-		}
-		if hs[a] >= hs[b] {
-			mm[b] = true
-		}
-	}
-
-	ans := 0
-	for i := 0; i < n; i++ {
-		if !mm[i] {
-			ans++
-		}
-	}
-
-	fmt.Println(ans)
+	fmt.Println()
 }
