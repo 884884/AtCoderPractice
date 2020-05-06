@@ -1,31 +1,14 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // 以下の問題
-// https://atcoder.jp/contests/abc065/tasks/abc065_b
+// https://atcoder.jp/contests/abc025/tasks/abc025_a
 
 func main() {
+	var s string
 	var n int
-	fmt.Scan(&n)
+	fmt.Scan(&s, &n)
 
-	arr := make([]int, n+1)
-	arr[0] = -1
-	for i := 1; i <= n; i++ {
-		fmt.Scan(&arr[i])
-	}
-
-	c, v := 0, 1
-	for i := 1; i <= n; i++ {
-		if v == 2 {
-			fmt.Println(c)
-			return
-		}
-		v = arr[v]
-		c++
-	}
-
-	fmt.Println("-1")
+	fmt.Println(s[n/5-1:n/5] + s[n%5-1:n%5])
 }
